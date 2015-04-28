@@ -3,6 +3,7 @@ description = Profile for staff with related views and panels
 core = 7.x
 package = Ding!
 project = ding_staff
+version = 7.x-2.0.0+easy
 dependencies[] = cs_adaptive_image
 dependencies[] = ctools
 dependencies[] = ding_base
