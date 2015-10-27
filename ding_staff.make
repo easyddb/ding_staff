@@ -15,7 +15,7 @@ projects[ding_base][download][tag] = "7.x-2.3.1"
 projects[ding_content][type] = "module"
 projects[ding_content][download][type] = "git"
 projects[ding_content][download][url] = "git@github.com:easyddb/ding_content.git"
-projects[ding_content][download][tag] = "7.x-2.2.0+easy"
+projects[ding_content][download][tag] = "7.x-2.3.1+easy"
 
 projects[ding_event][type] = "module"
 projects[ding_event][download][type] = "git"
