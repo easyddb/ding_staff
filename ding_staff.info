@@ -25,6 +25,7 @@ dependencies[] = profile2
 dependencies[] = realname
 dependencies[] = role_delegation
 dependencies[] = rules
+dependencies[] = rules_scheduler
 dependencies[] = strongarm
 dependencies[] = taxonomy
 dependencies[] = text
