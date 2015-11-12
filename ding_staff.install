@@ -176,3 +176,10 @@ function ding_staff_update_7005() {
 function ding_staff_update_7006() {
   module_enable(array('realname'));
 }
+
+/**
+ * Enable rules_scheduler module to run rules config.
+ */
+function ding_staff_update_7007() {
+  module_enable(array('rules_scheduler'));
+}
