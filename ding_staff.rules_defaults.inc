@@ -23,8 +23,8 @@ function ding_staff_default_rules_configuration() {
       ]
     }
   }');
-  $items['rules_when_profile2_is_updated'] = entity_import('rules_config', '{ "rules_when_profile2_is_updated" : {
-      "LABEL" : "When profile2 is updated",
+  $items['rules_after_profile2_is_updated'] = entity_import('rules_config', '{ "rules_after_profile2_is_updated" : {
+      "LABEL" : "After Profile2 is updated",
       "PLUGIN" : "reaction rule",
       "OWNER" : "rules",
       "REQUIRES" : [ "realname", "cache_actions", "profile2" ],
