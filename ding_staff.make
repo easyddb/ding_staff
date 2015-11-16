@@ -15,8 +15,7 @@ projects[ding_base][download][tag] = "7.x-2.3.1"
 projects[ding_content][type] = "module"
 projects[ding_content][download][type] = "git"
 projects[ding_content][download][url] = "git@github.com:easyddb/ding_content.git"
-projects[ding_content][download][tag] = ""
-projects[ding_content][download][branch] = "easyddb"
+projects[ding_content][download][tag] = "7.x-2.3.1+easy"
 
 projects[ding_event][type] = "module"
 projects[ding_event][download][type] = "git"
@@ -30,10 +29,10 @@ projects[entity][subdir] = "contrib"
 projects[entity][version] = "1.5"
 
 projects[features][subdir] = "contrib"
-projects[features][version] = "2.7"
+projects[features][version] = "2.0"
 
 projects[features_extra][subdir] = "contrib"
-projects[features_extra][version] = "1.0"
+projects[features_extra][version] = "1.0-beta1"
 
 projects[field_group][subdir] = "contrib"
 projects[field_group][version] = "1.1"
