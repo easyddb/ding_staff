@@ -176,3 +176,52 @@ function ding_staff_update_7005() {
 function ding_staff_update_7006() {
   module_enable(array('realname'));
 }
+
+/**
+ * Update realname for all staff users.
+ */
+function ding_staff_update_7007(&$sandbox) {
+  // Page size.
+  $num = 100;
+
+  // Initialize sandbox.
+  if (!isset($sandbox['offset'])) {
+    $rid = user_role_load_by_name('staff');
+    if (!$rid) {
+      // No user role "staff", finish.
+      $sandbox['#finished'] = 1;
+      return;
+    }
+    if (is_object($rid)) {
+      $rid = $rid->rid;
+    }
+    else {
+      // Error loading user role.
+      throw new DrupalUpdateException('Error loading user role "staff".');
+    }
+    $query = db_select('users_roles', 'ur');
+    $query->condition('ur.rid', $rid);
+    $query->addField('ur', 'uid');
+    $count = $query->countQuery()->execute()->fetchField();
+    $sandbox['offset'] = 0;
+    $sandbox['rid'] = $rid;
+    $sandbox['count'] = $count;
+    $sandbox['#finished'] = 0;
+  }
+
+  // Load next $num elements.
+  $query = db_select('users_roles', 'ur');
+  $query->condition('ur.rid', $sandbox['rid']);
+  $query->addField('ur', 'uid');
+  $query->range($sandbox['offset'], $num);
+  $res = $query->execute();
+
+  while ($record = $res->fetchField()) {
+    $account = user_load($record);
+    realname_update($account);
+  }
+
+  // Update sandbox values.
+  $sandbox['offset'] += $res->rowCount();
+  $sandbox['#finished'] = $sandbox['offset'] / $sandbox['count'];
+}
